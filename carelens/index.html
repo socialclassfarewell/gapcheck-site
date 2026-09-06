@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>CareLens for Copilot — Gap Check</title>
+<meta name="description" content="Unlock CareLens instruction packs for Microsoft work Copilot. Instructions only — do not paste care plans on this website.">
+<style>
+  :root { --ink:#1a1a1a; --soft:#555; --line:#e3e0da; --bg:#faf9f7; --accent:#0d5c63; --warn:#7a2e12; --warnbg:#f8efe8; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family: Georgia, 'Times New Roman', serif; background:var(--bg); color:var(--ink); line-height:1.65; }
+  main { max-width: 640px; margin: 0 auto; padding: 4rem 1.5rem; }
+  h1 { font-size: 2.2rem; letter-spacing:-0.02em; margin-bottom:.4rem; }
+  .tag { color:var(--accent); font-size:1.05rem; margin-bottom:1.4rem; }
+  h2 { font-size:1.05rem; text-transform:uppercase; letter-spacing:.08em; color:var(--soft); margin:2.2rem 0 .6rem; font-family: system-ui, sans-serif; }
+  p { margin-bottom:1rem; }
+  ol, ul { margin:0 0 1rem 1.2rem; }
+  li { margin-bottom:.45rem; }
+  .back { display:inline-block; margin-bottom:1.6rem; font-size:.95rem; }
+  .banner { border-left:3px solid var(--warn); padding:.8rem 1rem; background:var(--warnbg); border-radius:0 6px 6px 0; color:var(--warn); margin-bottom:1.6rem; }
+  .banner p:last-child { margin-bottom:0; }
+  .card { background:#fff; border:1px solid var(--line); border-radius:6px; padding:1rem 1.1rem; margin-bottom:.8rem; }
+  .card h3 { font-family: system-ui, sans-serif; font-size:1rem; font-weight:600; margin-bottom:.35rem; }
+  .meta { color:var(--soft); font-size:.9rem; font-family: system-ui, sans-serif; margin-bottom:.8rem; }
+  label { display:block; font-family: system-ui, sans-serif; font-size:.92rem; color:var(--soft); margin-bottom:.35rem; }
+  input[type="password"], input[type="text"] {
+    width:100%; max-width:12rem; font-size:1.15rem; letter-spacing:.2em; padding:.55rem .7rem;
+    border:1px solid var(--line); border-radius:6px; background:#fff; color:var(--ink);
+    font-family: system-ui, sans-serif;
+  }
+  .row { display:flex; flex-wrap:wrap; gap:.6rem; align-items:center; margin-top:.5rem; }
+  button {
+    font-family: system-ui, sans-serif; font-size:.95rem; padding:.55rem 1rem; border-radius:6px;
+    border:1px solid var(--accent); background:var(--accent); color:#fff; cursor:pointer;
+  }
+  button.secondary { background:#fff; color:var(--accent); }
+  button:disabled { opacity:.55; cursor:not-allowed; }
+  .err { color:var(--warn); font-family: system-ui, sans-serif; font-size:.92rem; margin-top:.5rem; min-height:1.2em; }
+  .ok { color:var(--accent); font-family: system-ui, sans-serif; font-size:.92rem; margin-bottom:.8rem; }
+  .hidden { display:none; }
+  footer { margin-top:3rem; padding-top:1.2rem; border-top:1px solid var(--line); color:var(--soft); font-size:.92rem; }
+  a { color:var(--accent); }
+</style>
+</head>
+<body>
+<main>
+  <a class="back" href="/">&larr; Gap Check</a>
+  <h1>CareLens for Copilot</h1>
+  <p class="tag">Instruction packs for Microsoft work Copilot</p>
+
+  <div class="banner" role="alert">
+    <p><strong>Do not paste care plans on this website.</strong> This page holds instructions only. Paste resident text only into work Microsoft Copilot. There is no upload and nothing you type here is sent to a server.</p>
+  </div>
+
+  <section id="gate">
+    <h2>Access</h2>
+    <p>Enter the ward access code to reveal the copyable packs.</p>
+    <form id="unlock-form" class="card" autocomplete="off">
+      <label for="code">Access code</label>
+      <input id="code" name="code" type="password" inputmode="numeric" pattern="[0-9]*" maxlength="8" autocomplete="off" required>
+      <div class="row">
+        <button type="submit">Unlock</button>
+      </div>
+      <p class="err" id="err" hidden></p>
+    </form>
+  </section>
+
+  <section id="packs" class="hidden">
+    <p class="ok">Unlocked. Copy the packs below, then use them in work Copilot — not on this page.</p>
+
+    <div class="card">
+      <h3>1. System instructions</h3>
+      <p class="meta" id="sys-meta"></p>
+      <div class="row">
+        <button type="button" class="secondary" id="copy-sys">Copy system instructions</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>2. User prompt</h3>
+      <p class="meta" id="user-meta"></p>
+      <div class="row">
+        <button type="button" class="secondary" id="copy-user">Copy user prompt</button>
+      </div>
+    </div>
+
+    <h2>How to use on the ward</h2>
+    <ol>
+      <li>Open Microsoft 365 Copilot while signed into work.</li>
+      <li>Prefer <strong>Agent Instructions</strong> (keep the pack at or under 8k characters).</li>
+      <li>Turn web search / grounding <strong>off</strong>.</li>
+      <li>Paste the system instructions into Agent Instructions (or the first system message).</li>
+      <li>Start the chat with the user prompt. Paste the care plan or section <strong>only below the line</strong>, and only inside work Copilot.</li>
+      <li>Do not paste resident text here. This site has no place to put it.</li>
+    </ol>
+  </section>
+
+  <h2>What this is</h2>
+  <p>CareLens reviews documentation for gaps only. It does not assign an AN-ACC class, invent facts, or search the web. Use it on a work Copilot tenant your organisation already controls.</p>
+
+  <footer>
+    Gap Check · instructions only · no care-plan upload<br>
+    <a href="/">Back to Gap Check</a>
+  </footer>
+</main>
+<script>
+(function () {
+  var SYSTEM = [
+    "# CareLens mode — system instructions for Microsoft work Copilot",
+    "",
+    "You are CareLens in documentation-gap mode. Review only the resident care plan or section pasted after the user-prompt line. Find documentation gaps — missing, inconsistent, stale, or unlinked statements — using the CareLens rule catalogue. Do not treat this as a clinical assessment.",
+    "",
+    "## Hard bans",
+    "- Never assign, guess, recommend, or imply an AN-ACC class (Class 1–13, respite classes, or “likely class”). Classification is out of scope.",
+    "- Never invent facts, scores, diagnoses, dates, or interventions that are not in the pasted text.",
+    "- Do not use web search, browse, plugins, or any source outside the pasted text.",
+    "- Do not give clinical orders, diagnoses, or treatment advice. Suggest documentation actions only.",
+    "- Do not ask anyone to paste resident text onto a public website.",
+    "",
+    "## What counts as a finding",
+    "A finding exists only when the pasted text supports a catalogue rule. Quote short evidence. If a domain is not mentioned, you may note “not evidenced in this extract”. Absence is a finding only when a stated diagnosis or risk makes the missing item required by a rule.",
+    "",
+    "## Output structure",
+    "1. Extract scope — one line: whole plan or named section.",
+    "2. Findings — for each: code; severity; title; evidence (short quote); gap; documentation action (not a care order).",
+    "3. Counts — findings by severity; list unused codes as “not triggered”.",
+    "4. Stop. No AN-ACC class. No extra narrative.",
+    "",
+    "## CareLens rule catalogue",
+    "Use only these codes. Severity is fixed.",
+    "",
+    "### Mobility",
+    "- MOB-01 (high) — Mobility baseline missing or not current: no stated mobility status, walking ability, or last-review date.",
+    "- MOB-02 (high) — Falls risk or falls history without linked prevention interventions.",
+    "- MOB-03 (medium) — Transfer or assistance level missing, vague, or inconsistent with mobility text.",
+    "",
+    "### Cognition",
+    "- COG-01 (high) — Cognitive status not stated (orientation, dementia, delirium, or equivalent).",
+    "- COG-02 (medium) — Cognitive impairment without decision-support, capacity, or communication notes.",
+    "- COG-03 (high) — Wandering, absconding, or supervision need without a stated supervision plan.",
+    "",
+    "### Behaviour",
+    "- BEH-01 (high) — Behaviours of concern without triggers, frequency, or staff response.",
+    "- BEH-02 (critical) — Restrictive practice or psychotropic PRN without indication, authorisation, or review.",
+    "",
+    "### Activities of daily living",
+    "- ADL-01 (medium) — Hygiene, dressing, or grooming assistance level missing or inconsistent.",
+    "- ADL-02 (medium) — Showering or toileting assistance not specified where ADLs are otherwise described.",
+    "",
+    "### Skin",
+    "- SKN-01 (high) — Pressure-injury risk stated without a prevention plan (repositioning, surface, skin checks).",
+    "- SKN-02 (high) — Wound or skin-integrity issue without treatment, review date, or healing status.",
+    "",
+    "### Nutrition",
+    "- NUT-01 (high) — Weight change, swallowing risk, or modified diet without linked nutrition interventions.",
+    "",
+    "### Continence",
+    "- CTN-01 (medium) — Continence status not stated.",
+    "- CTN-02 (medium) — Aids or toileting program not specified where incontinence is stated.",
+    "",
+    "### Pain",
+    "- PAIN-01 (high) — Pain mentioned without location or severity, assessment, or management.",
+    "",
+    "### Palliative",
+    "- PAL-01 (high) — Palliative or end-of-life needs without goals of care or comfort measures.",
+    "",
+    "### Medication",
+    "- MED-01 (high) — High-risk or PRN medicine without indication, monitoring, or review.",
+    "",
+    "### Oral",
+    "- ORAL-01 (medium) — Oral or dental care needs not documented where a mouth, denture, or swallowing issue is implied.",
+    "",
+    "### Sensory",
+    "- SEN-01 (medium) — Vision or hearing impairment, or use of aids, not reflected in the care plan.",
+    "",
+    "### Infection",
+    "- INF-01 (high) — Infection or isolation need without precautions.",
+    "- INF-02 (medium) — Antimicrobial or infection treatment without a review date.",
+    "",
+    "### Allied health",
+    "- AH-01 (medium) — Allied-health recommendation not carried into care-plan interventions.",
+    "",
+    "### Social",
+    "- SOC-01 (low) — Social, cultural, or spiritual preferences or meaningful activity missing.",
+    "",
+    "### Diabetes",
+    "- DIA-01 (high) — Diabetes stated without BGL monitoring, a hypo plan, or diet linkage.",
+    "",
+    "## Style",
+    "Be concise. Australian English. Lead with codes. If the extract is too thin to judge a rule, say so — do not fill gaps with assumption."
+  ].join("\n");
+
+  var USER = [
+    "CareLens review — paste the care plan or section **below this line**.",
+    "",
+    "Rules reminder: documentation gaps only; use CareLens codes (BEH-01, MOB-03, …); never assign an AN-ACC class; no invented facts; no web search.",
+    "",
+    "---",
+    ""
+  ].join("\n");
+
+  var ACCESS = "4444";
+
+  var gate = document.getElementById("gate");
+  var packs = document.getElementById("packs");
+  var form = document.getElementById("unlock-form");
+  var err = document.getElementById("err");
+  var codeInput = document.getElementById("code");
+
+  document.getElementById("sys-meta").textContent =
+    SYSTEM.length.toLocaleString("en-AU") + " characters · paste into Agent Instructions";
+  document.getElementById("user-meta").textContent =
+    USER.length.toLocaleString("en-AU") + " characters · then paste the plan only in Copilot, below the line";
+
+  function showError(msg) {
+    err.hidden = !msg;
+    err.textContent = msg || "";
+  }
+
+  function unlock() {
+    gate.classList.add("hidden");
+    packs.classList.remove("hidden");
+    codeInput.value = "";
+  }
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    var entered = String(codeInput.value || "").replace(/\s+/g, "");
+    if (entered === ACCESS) {
+      showError("");
+      unlock();
+      return;
+    }
+    showError("That code is not right.");
+    codeInput.focus();
+    codeInput.select();
+  });
+
+  function copyText(text, button, okLabel) {
+    var original = button.textContent;
+    function done() {
+      button.textContent = okLabel;
+      window.setTimeout(function () { button.textContent = original; }, 1600);
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(done).catch(function () { fallback(); });
+      return;
+    }
+    fallback();
+    function fallback() {
+      var area = document.createElement("textarea");
+      area.value = text;
+      area.setAttribute("readonly", "");
+      area.style.position = "fixed";
+      area.style.left = "-9999px";
+      document.body.appendChild(area);
+      area.select();
+      try { document.execCommand("copy"); done(); } catch (x) { button.textContent = "Copy failed"; }
+      document.body.removeChild(area);
+    }
+  }
+
+  document.getElementById("copy-sys").addEventListener("click", function () {
+    copyText(SYSTEM, this, "Copied system instructions");
+  });
+  document.getElementById("copy-user").addEventListener("click", function () {
+    copyText(USER, this, "Copied user prompt");
+  });
+})();
+</script>
+</body>
+</html>
