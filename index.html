@@ -3,89 +3,101 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Gap Check — documentation gap checks for NDIS providers</title>
-<meta name="description" content="Fixed-price documentation gap checks against the NDIS Practice Standards modules that apply to your registration groups. Run by a registered nurse in Queensland.">
+<title>Gap Check — coming soon</title>
+<meta name="description" content="Gap Check is being rebuilt. Contact hello@gapcheck.net.">
+<meta name="theme-color" content="#0b2e33">
 <style>
-  :root { --ink:#1a1a1a; --soft:#555; --line:#e3e0da; --bg:#faf9f7; --accent:#0d5c63; }
+  :root { --ink:#f4f1ea; --soft:#b9c9c6; --line:rgba(127,209,199,.22); --accent:#7fd1c7; --warm:#f2c572; }
   * { margin:0; padding:0; box-sizing:border-box; }
-  body { font-family: Georgia, 'Times New Roman', serif; background:var(--bg); color:var(--ink); line-height:1.65; }
-  main { max-width: 640px; margin: 0 auto; padding: 4rem 1.5rem; }
-  h1 { font-size: 2.2rem; letter-spacing:-0.02em; margin-bottom:.4rem; }
-  .tag { color:var(--accent); font-size:1.05rem; margin-bottom:2.2rem; }
-  h2 { font-size:1.05rem; text-transform:uppercase; letter-spacing:.08em; color:var(--soft); margin:2.2rem 0 .6rem; font-family: system-ui, sans-serif; }
-  p { margin-bottom:1rem; }
-  .scope { border-left:3px solid var(--accent); padding:.8rem 1rem; background:#fff; border-radius:0 6px 6px 0; }
-  .offer { background:#fff; border:1px solid var(--line); border-radius:6px; padding:.8rem 1rem; margin-bottom:.6rem; }
-  .offer + .offer { margin-top:-.2rem; }
-  footer { margin-top:3rem; padding-top:1.2rem; border-top:1px solid var(--line); color:var(--soft); font-size:.92rem; }
-  a { color:var(--accent); }
+  body { font-family: Georgia, 'Times New Roman', serif; color:var(--ink); line-height:1.6;
+         background:#0b2e33 radial-gradient(120% 90% at 15% 0%, #13565d 0%, #0b2e33 55%, #071d21 100%) fixed;
+         min-height:100vh; display:flex; flex-direction:column; }
+  main { flex:1; width:100%; max-width:1080px; margin:0 auto; padding:4rem 1.5rem;
+         display:grid; grid-template-columns:minmax(0,1.05fr) minmax(0,1fr); gap:3.5rem; align-items:center; }
+  .art svg { width:100%; height:auto; display:block; }
+  .eyebrow { font-family: system-ui, -apple-system, 'Segoe UI', sans-serif; text-transform:uppercase;
+             letter-spacing:.14em; font-size:.85rem; color:var(--accent); margin-bottom:1rem; }
+  h1 { font-size:clamp(2.6rem, 6vw, 4.2rem); line-height:1.05; letter-spacing:-.02em; margin-bottom:1.2rem; }
+  .lede { font-size:1.2rem; color:var(--soft); max-width:30ch; margin-bottom:2rem; }
+  .contact { font-family: system-ui, -apple-system, 'Segoe UI', sans-serif; font-size:1rem; color:var(--soft); }
+  a { color:var(--warm); text-underline-offset:3px; }
+  a:focus-visible { outline:2px solid var(--warm); outline-offset:3px; border-radius:2px; }
+  footer { max-width:1080px; width:100%; margin:0 auto; padding:1.2rem 1.5rem 2rem; border-top:1px solid var(--line);
+           font-family: system-ui, -apple-system, 'Segoe UI', sans-serif; font-size:.9rem; color:var(--soft); }
+  footer a { color:var(--soft); }
+  .piece { animation: settle 7s cubic-bezier(.2,.7,.2,1) infinite; transform-box: fill-box; }
+  .slot { animation: slot 7s ease-in-out infinite; }
+  @keyframes settle {
+    0%   { transform: translate(34px, -46px) rotate(8deg); opacity:0; }
+    12%  { opacity:1; }
+    38%  { transform: translate(0, 0) rotate(0); opacity:1; }
+    82%  { transform: translate(0, 0) rotate(0); opacity:1; }
+    100% { transform: translate(0, 0) rotate(0); opacity:0; }
+  }
+  @keyframes slot { 0%, 30% { opacity:.9; } 40%, 85% { opacity:0; } 100% { opacity:.9; } }
+  @media (prefers-reduced-motion: reduce) { .piece, .slot { animation:none; } .slot { opacity:0; } }
+  @media (max-width: 760px) {
+    main { grid-template-columns:1fr; gap:2rem; padding:2.5rem 1.25rem 3rem; }
+    .art { max-width:340px; }
+  }
 </style>
 </head>
 <body>
 <main>
-  <h1>Gap Check</h1>
-  <p class="tag">Documentation gap checks for NDIS providers</p>
-
-  <h2>What it is</h2>
-  <p>Gap Check reviews your organisation-level documentation — policies, procedures,
-  registers and training records — against the NDIS Practice Standards modules that
-  apply to your registration groups. You receive a written report with each gap
-  rated and a prioritised closure plan, at a fixed price agreed before work begins.</p>
-
-  <p>That includes the SIL module (Module 5A), in force since 1 July 2026, and the
-  Core Module requirement for a documented program of internal audits proportionate
-  to your size and complexity.</p>
-
-  <h2>Scope</h2>
-  <p class="scope">Organisation-level documentation only. Participant files, clinical
-  records and individual worker performance are not reviewed. Gap Check is preparation
-  support — it is not an audit, certification, or legal advice. We are not an approved
-  quality auditor, we do not conduct audits, and we make no claims about the outcome
-  of any audit.</p>
-
-  <h2>Fee</h2>
-  <p>A fixed fee, set by the audit pathway your registration groups place you in,
-  taken from the public NDIS register rather than from an estimate. You get the
-  figure in writing before anything starts, and it does not move afterwards. Half
-  on engagement, half on delivery. One re-check of the same documents is included
-  at no charge within 30 days.</p>
-  <p><a href="mailto:hello@gapcheck.net?subject=Scope%20and%20price">Email us</a>
-  with your registration groups and we will send back the scope and the fee on one
-  page.</p>
-
-  <h2>The new SIL Practice Standards</h2>
-  <p class="offer">The SIL Practice Standards changed on 1 July 2026. If you are
-  registered for supported independent living, Module 5A is what you will be
-  assessed against at your next audit — mid-term or renewal, not only at initial
-  registration.</p>
-  <p class="offer">We have written a one-page summary of the four outcomes and
-  which of your documents each one touches.
-  <a href="mailto:hello@gapcheck.net?subject=Send%20me%20the%20SIL%20summary">Email
-  us and we will send it</a> — no cost, and no follow-up unless you ask for one.</p>
-
-  <h2>How your documents are handled</h2>
-  <p><strong>We never accept participant information.</strong> Participant files,
-  clinical records and health information are out of scope, are not requested, and
-  are not accepted — if any reaches us in error we delete it and tell you in writing.</p>
-  <p>Only organisation-level documents are reviewed. Delivering that work uses
-  third-party services for email, file storage and AI-assisted document review, and
-  some of those providers may store or process data outside Australia. Our
-  <a href="/privacy.html">privacy policy</a> sets this out in full.</p>
-
-  <h2>Who runs it</h2>
-  <p>Gap Check is run by <strong>Ahmed Ademoglu</strong>, a registered nurse with
-  clinical governance experience, based in Queensland. Sole trader, ABN 24 289 004 542.</p>
-
-  <h2>Contact</h2>
-  <p>Email <a href="mailto:hello@gapcheck.net">hello@gapcheck.net</a> for a one-page
-  scope and price.</p>
-
-  <footer>
-    Gap Check · ABN 24 289 004 542 · Shop 2/290 Boundary Street, Spring Hill QLD 4000<br>
-    We send no marketing email from this domain to anyone who has opted out. Reply
-    &ldquo;unsubscribe&rdquo; or &ldquo;stop&rdquo; to any message and the opt-out is
-    permanent.
-  </footer>
+  <div class="art">
+    <svg viewBox="0 0 400 400" role="img" aria-label="A grid of document tiles with the last missing piece dropping into place">
+      <defs>
+        <g id="doc">
+          <rect width="64" height="64" rx="9" fill="rgba(127,209,199,.10)" stroke="rgba(127,209,199,.38)"/>
+          <rect x="12" y="16" width="40" height="5" rx="2.5" fill="rgba(244,241,234,.38)"/>
+          <rect x="12" y="29" width="30" height="5" rx="2.5" fill="rgba(244,241,234,.26)"/>
+          <rect x="12" y="42" width="35" height="5" rx="2.5" fill="rgba(244,241,234,.26)"/>
+        </g>
+        <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur stdDeviation="7" result="b"/>
+          <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+      </defs>
+      <use href="#doc" x="12" y="12" opacity="0.55"/>
+      <use href="#doc" x="88" y="12" opacity="0.8"/>
+      <use href="#doc" x="164" y="12" opacity="1"/>
+      <use href="#doc" x="240" y="12" opacity="0.7"/>
+      <use href="#doc" x="316" y="12" opacity="0.9"/>
+      <use href="#doc" x="12" y="88" opacity="1"/>
+      <use href="#doc" x="88" y="88" opacity="0.7"/>
+      <use href="#doc" x="164" y="88" opacity="0.9"/>
+      <use href="#doc" x="240" y="88" opacity="0.55"/>
+      <use href="#doc" x="316" y="88" opacity="0.8"/>
+      <use href="#doc" x="12" y="164" opacity="0.9"/>
+      <use href="#doc" x="88" y="164" opacity="0.55"/>
+      <use href="#doc" x="164" y="164" opacity="0.8"/>
+      <use href="#doc" x="316" y="164" opacity="0.7"/>
+      <use href="#doc" x="12" y="240" opacity="0.8"/>
+      <use href="#doc" x="88" y="240" opacity="1"/>
+      <use href="#doc" x="164" y="240" opacity="0.7"/>
+      <use href="#doc" x="240" y="240" opacity="0.9"/>
+      <use href="#doc" x="316" y="240" opacity="0.55"/>
+      <use href="#doc" x="12" y="316" opacity="0.7"/>
+      <use href="#doc" x="88" y="316" opacity="0.9"/>
+      <use href="#doc" x="164" y="316" opacity="0.55"/>
+      <use href="#doc" x="240" y="316" opacity="0.8"/>
+      <use href="#doc" x="316" y="316" opacity="1"/>
+      <rect class="slot" x="241" y="165" width="62" height="62" rx="9" fill="none" stroke="#f2c572" stroke-width="1.6" stroke-dasharray="6 5"/>
+      <g class="piece" filter="url(#glow)">
+        <rect x="240" y="164" width="64" height="64" rx="9" fill="#f2c572"/>
+        <rect x="252" y="180" width="40" height="5" rx="2.5" fill="rgba(11,46,51,.55)"/>
+        <rect x="252" y="193" width="30" height="5" rx="2.5" fill="rgba(11,46,51,.4)"/>
+        <path d="M275 210 l6 6 l12 -13" fill="none" stroke="#0b2e33" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+      </g>
+    </svg>
+  </div>
+  <div>
+    <p class="eyebrow">Gap Check</p>
+    <h1>Coming soon.</h1>
+    <p class="lede">We're rebuilding Gap Check. The new site will be here shortly.</p>
+    <p class="contact">In the meantime, email <a href="mailto:hello@gapcheck.net">hello@gapcheck.net</a>.</p>
+  </div>
 </main>
+<footer><a href="/privacy.html">Privacy policy</a></footer>
 </body>
 </html>
