@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Data processing addendum — GapCheck</title>
+<meta name="description" content="How GapCheck holds a provider's worker and participant records on its behalf.">
+<style>
+  :root { --ink:#1a1a1a; --soft:#555; --line:#e3e0da; --bg:#faf9f7; --accent:#0d5c63; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family: Georgia, 'Times New Roman', serif; background:var(--bg); color:var(--ink); line-height:1.65; }
+  main { max-width: 720px; margin: 0 auto; padding: 4rem 1.5rem; }
+  h1 { font-size: 2.2rem; letter-spacing:-0.02em; margin-bottom:.4rem; }
+  .tag { color:var(--soft); font-size:1.02rem; margin-bottom:2.2rem; }
+  h2 { font-size:1.05rem; text-transform:uppercase; letter-spacing:.08em; color:var(--soft); margin:2.2rem 0 .6rem; font-family: system-ui, sans-serif; }
+  p { margin-bottom:1rem; }
+  ul { margin:0 0 1rem 1.2rem; }
+  li { margin-bottom:.4rem; }
+  .scope { border-left:3px solid var(--accent); padding:.8rem 1rem; background:#fff; border-radius:0 6px 6px 0; }
+  .scope p:last-child { margin-bottom:0; }
+  table.keep { border-collapse:collapse; width:100%; margin-bottom:1rem; }
+  table.keep th { text-align:left; font-weight:normal; padding:.45rem 1.2rem .45rem 0; border-bottom:1px solid var(--line); vertical-align:top; }
+  table.keep td { text-align:left; padding:.45rem 0; border-bottom:1px solid var(--line); vertical-align:top; }
+  .back { display:inline-block; margin-bottom:1.6rem; font-size:.95rem; }
+  footer { margin-top:3rem; padding-top:1.2rem; border-top:1px solid var(--line); color:var(--soft); font-size:.92rem; }
+  a { color:var(--accent); }
+  h2 { text-transform:none; letter-spacing:0; font-size:1.3rem; color:var(--ink); font-family: Georgia, serif; }
+  h3 { font-size:1.08rem; margin:1.6rem 0 .5rem; }
+  .draft { border-left:3px solid #b8860b; padding:.7rem 1rem; background:#fff; margin:0 0 1.6rem; }
+  nav.docs a { margin-right:1rem; }
+  code { font-family: ui-monospace, Menlo, monospace; font-size:.92em; }
+  blockquote { border-left:3px solid var(--line); margin:0 0 1rem; padding:.2rem 1rem; color:var(--soft); }
+  table { border-collapse:collapse; width:100%; margin-bottom:1rem; }
+  th, td { text-align:left; padding:.45rem .8rem .45rem 0; border-bottom:1px solid var(--line); vertical-align:top; }
+</style>
+</head>
+<body>
+<main>
+  <a class="back" href="/">&larr; GapCheck</a>
+  <h1>Data Processing Addendum</h1>
+  <p class="tag">Version 0.2 · for the GapCheck portal and worker app</p>
+  <nav class="docs"><a href="/privacy.html">Privacy policy</a><a href="/terms.html">Terms of service</a><a href="/dpa.html">Data processing addendum</a></nav>
+  <div class="draft"><p>These documents are published for review before launch. They describe the software as it is today and have not yet been checked by a lawyer. Questions: <a href="mailto:hello@gapcheck.net">hello@gapcheck.net</a>.</p></div>
+<p><strong>Draft 0.2, 6 October 2026. Written to match what the software does today. Not yet reviewed by a lawyer.</strong> Version 0.2 · 6 October 2026</p>
+<p>Forms part of the <a href="/terms">Terms of Service</a>. This is the document your compliance person will ask for.</p>
+<h2>1. Roles</h2>
+<p>You decide what information about your staff, workers and participants is entered and why. We hold and process it only to provide the service to you, and only on your instructions. You remain accountable to your workers and participants for it.</p>
+<p>Australian privacy law does not use the controller/processor split, so nothing here imports GDPR meanings. The practical position is what matters: <strong>it is your data, held by us on your behalf.</strong></p>
+<h2>2. Scope</h2>
+<p><strong>In — your staff:</strong> name, email, role, password hash, settings, sign-in times.</p>
+<p><strong>In — your workers:</strong> names, the identifiers you choose, roles, work emails, training assignments, due dates, assessment responses and scores, competency sign-offs with the assessor's name, credentials and their numbers and expiry dates, documents you upload against a worker, availability, time off and its kind (including sick leave), shifts, offers, clock-in and clock-out times, the phone's location at clock-in and clock-out where you switch it on, pay rates and approved hours, and announcement read receipts. While a CSV of workers or participants is being imported, the parsed rows are held for up to 30 minutes.</p>
+<p><strong>In — your participants:</strong> the identifiers and labels you choose, NDIS numbers, plan dates, plan management type and plan funding, plan manager name and email, shifts and support items, travel recorded against shifts, agreed support hours, the regular team, progress notes, chart entries, medicine lists and medicine records (where we switch that feature on for you), the bowel flag setting, and incident records including internal ones.</p>
+<p><strong>Health information</strong> in that list: progress notes, chart entries, medicine lists and records, incident records, and sick-leave markers. You are the party that decides to collect them and owes notice to the people concerned.</p>
+<p><strong>Out:</strong> participants' full names beyond the label you choose, dates of birth, addresses, care plans, behaviour support plans and restrictive-practice authorisation documents. There is no field for them and the service refuses documents against a participant. (An incident record can say a restrictive practice was used.) Do not put them in notes. If we notice them, we will tell you and ask you to supersede the note.</p>
+<h2>3. Our undertakings</h2>
+<p>We will:</p>
+<ul><li>process the information only to provide the service to you and not for our own purposes, except that we may build <strong>de-identified, aggregated</strong> datasets from training and assessment use (direct identifiers and free-text answers removed; never notes, charts, medicine records, incidents, locations or pay) to improve our courses and product, as the Privacy Policy describes;</li><li>not sell personal information, and not use it for advertising or to profile individuals;</li><li>not attempt to re-identify any de-identified dataset we create;</li><li>keep it in <strong>Australia</strong> (clause 5);</li><li>limit our own access to support and maintenance, with a reason;</li><li>apply the security measures in clause 4;</li><li>help you respond to a worker's or participant's request about their own record;</li><li>return or delete it as described in clause 7;</li><li>switch on features that widen the data held (medicine records today) only when you ask us to, and record that you asked.</li></ul>
+<h2>4. Security</h2>
+<ul><li>Passwords hashed with scrypt; we cannot read them.</li><li>Session cookies and device keys stored as digests, so a stolen copy of the database cannot be used to sign in.</li><li>TLS in transit, with HSTS.</li><li>Sign-in throttling by account and by network address.</li><li>Every query scoped to one provider; two customers cannot collide.</li><li>Signed notes, chart entries, incident records and clock events are append-only; nothing is rewritten or deleted. A note is corrected by a superseding note; the others by a correction recorded alongside.</li><li>The audit log cannot be altered while the account is open (database triggers); network addresses on it, and in the web server's access log, are removed after 90 days.</li><li>A nightly copy of the database, taken through SQLite's online backup and checked whole before it is kept, pulled to a machine we control in Australia and kept 30 days; the host's own two-day server snapshots in Sydney. The copy was opened and read on 5 September 2026; a full restore from the host's snapshot has not yet been rehearsed.</li><li>The app keeps its device key in the phone's secure store and the Android app is excluded from cloud backup; signing out removes the local copy.</li></ul>
+<h2>5. Sub-processors</h2>
+<table><thead><tr><th>Who</th><th>What for</th><th>Where</th></tr></thead><tbody><tr><td>BinaryLane</td><td>Server and storage</td><td>Sydney, Australia</td></tr><tr><td>Zoho Mail</td><td>Email we send (training links, reminders, resets, roster notices, Monday summary)</td><td>Australia</td></tr></tbody></table>
+<p>Not sub-processors but worth knowing: the nightly database copy goes to a machine we control ourselves in Australia, not to a third party; Apple and Google distribute the app and receive no service data; Google Maps is opened in a staff member's own browser only if they click "Map" on a clock-in position; the NDIA and plan managers receive only what you download and send yourself.</p>
+<p>We will give you [NUMBER] days' notice before adding a sub-processor, and you may terminate without penalty if you object.</p>
+<h2>6. Breach notification</h2>
+<p>If we become aware of unauthorised access to, disclosure of, or loss of your information, we will:</p>
+<ul><li>tell you without undue delay and in any case within [NUMBER] hours of becoming aware;</li><li>tell you what we know: what happened, what data, how many people, what we are doing;</li><li>help you meet your own obligations, including under the Notifiable Data Breaches scheme and, for incidents involving participants, your NDIS obligations; you are the one who can identify and reach the people concerned, and where the scheme lets one notification cover us both we will rely on yours;</li><li>not make a public statement identifying you without your agreement, unless the law requires it.</li></ul>
+<h2>7. Return and deletion</h2>
+<p>On termination, or on your written request at any time, we will give you a machine-readable export (CSV files plus the documents you uploaded) and delete the data from live systems within [NUMBER] days and from backups within a further [NUMBER] days as backups age out.</p>
+<p>We will not delete data during a billing dispute in a way that costs you evidence you are required to hold.</p>
+<h2>8. Audit</h2>
+<p>On reasonable notice, no more than once a year, we will answer a reasonable written security questionnaire and provide what documentation we have. We are a small supplier: expect honest answers about what exists, not certifications we do not hold.</p>
+<h2>9. Your responsibilities</h2>
+<ul><li>Have a basis to enter your workers' details, pay rates and credentials, and tell them what the service records about them, including location at clock-in if you switch it on.</li><li>Give participants the privacy notice your own obligations require before your workers write notes, charts, medicine records or incidents about them.</li><li>Keep account access under control, and remove people who leave.</li><li>Decide your own retention periods. Incident and complaint records carry a seven-year retention under the NDIS (Incident Management and Reportable Incidents) Rules 2018 and the NDIS (Complaints Management and Resolution) Rules 2018, as our courses on them cite; that is your obligation, not a GapCheck setting.</li><li>Do not enter the excluded participant information in clause 2.</li><li>Where you download exports, claim files, invoices or notes packs, you are responsible for them from that point.</li></ul>
+<p><strong>Contact:</strong> Gap Check, Shop 2/290 Boundary Street, Spring Hill QLD 4000, hello@gapcheck.net</p>
+  <footer>
+    Gap Check · ABN 24 289 004 542 · Shop 2/290 Boundary Street, Spring Hill QLD 4000<br>
+    <a href="mailto:hello@gapcheck.net">hello@gapcheck.net</a> · <a href="/privacy-advisory.html">Privacy policy for our document-review service</a> · <a href="/">Back</a>
+  </footer>
+</main>
+</body>
+</html>
